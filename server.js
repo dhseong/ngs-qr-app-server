@@ -44,7 +44,7 @@ app.post('/api/create', (req, res) => {
 
 app.get('/api/get', (req, res) => {
   User.find({}, (err, users) => {
-    if (err) return res.status(500).send({err: 'database failure'})
+    if (err) return res.status(500).send({err: 'database failure', err})
     res.json(users)
   })
 })
