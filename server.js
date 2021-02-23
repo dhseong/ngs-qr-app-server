@@ -42,4 +42,11 @@ app.post('/api/create', (req, res) => {
   })
 })
 
+app.get('/api/get', (req, res) => {
+  User.find({}, (err, users) => {
+    if (err) return res.status(500).send({err: 'database failure'})
+    res.json(users)
+  })
+})
+
 app.listen(port, () => console.log(`Server is listening to port: ${port}`))
