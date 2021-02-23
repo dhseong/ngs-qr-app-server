@@ -10,7 +10,11 @@ const port = 5000
 const cors = require("cors");
 app.use(
 	cors({
-		origin: ["http://localhost:3000", "http://skku-milab.ddns.net:3300"],
+		origin: [
+		  "http://localhost:3000",
+      "http://skku-milab.ddns.net:3300",
+      "https://ngs-qr.herokuapp.com/"
+    ],
 		credentials: true,
 	})
 );
