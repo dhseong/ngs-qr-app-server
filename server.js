@@ -2,7 +2,7 @@ const express = require('express')
 const mongoose = require('mongoose')
 const bodyParser = require('body-parser')
 const {User} = require('./models/user')
-const db = require('./config/keys')
+// const db = require('./config/keys')
 
 const app = express()
 const port = process.env.PORT || 5000;
@@ -20,10 +20,12 @@ app.use(cors());
 // 	})
 // );
 
+mongoURI = 'mongodb+srv://ngsqr:ozbf5b8CdCU17xo5@cluster0.d75oo.mongodb.net/ngsqr?retryWrites=true&w=majority'
+
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 
-mongoose.connect(db.mongoURI, {
+mongoose.connect(mongoURI, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
   useCreateIndex: true,
