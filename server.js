@@ -13,7 +13,7 @@ app.use(
 		origin: [
 		  "http://localhost:3000",
       "http://skku-milab.ddns.net:3300",
-      "https://ngs-qr.herokuapp.com/"
+      "https://ngs-qr.herokuapp.com"
     ],
 		credentials: true,
 	})
