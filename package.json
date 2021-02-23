@@ -1,0 +1,22 @@
+{
+  "name": "ngs-qr-app-server",
+  "version": "1.0.0",
+  "description": "NGS Quality Reporting",
+  "main": "server.js",
+  "scripts": {
+    "start": "nodemon server.js"
+  },
+  "author": "Donghyeong Seong",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "mongoose": "^5.11.15",
+    "nodemon": "^2.0.7"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dhseong/ngs-qr-app-server"
+  }
+}
