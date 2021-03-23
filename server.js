@@ -2,6 +2,7 @@ const express = require('express')
 const mongoose = require('mongoose')
 const bodyParser = require('body-parser')
 const {User} = require('./models/user')
+const {Client} = require('./models/client')
 // const db = require('./config/keys')
 
 const app = express()
@@ -48,6 +49,17 @@ app.get('/api/get', (req, res) => {
   User.find({}, (err, users) => {
     if (err) return res.status(500).send({err: 'database failure', err})
     res.json(users)
+  })
+})
+
+app.post('/api/client', (req, res) => {
+  const client = new Client(req.body)
+
+  client.save((error, userInfo) => {
+    if (error) return res.json({success: false, error})
+    return res.status(200).json({
+      success: true
+    })
   })
 })
 
