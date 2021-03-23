@@ -1,13 +1,14 @@
 const mongoose = require('mongoose')
 
 const clientSchema = new mongoose.Schema({
+  ip: {type: String, required: true},
   country: {type: String, required: true},
-  countryCode: {type: String, required: true},
-  region: {type: String, required: true},
-  regionName: {type: String, required: true},
-  city: {type: String, required: true},
-  zip: {type: String, required: true},
-  query: {type: String, required: true}
+  country_name: {type: String, required: true},
+  country_code: {type: String, required: true},
+  region: {type: String, required: false},
+  region_code: {type: String, required: false},
+  city: {type: String, required: false},
+  postal: {type: String, required: false}
 }, {timestamps: true})
 
 const Client = mongoose.model('Client', clientSchema)
